@@ -1,0 +1,45 @@
+# application.yml 配置文件
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: personal-knowledge-base
+  datasource:
+    url: jdbc:mysql://localhost:3306/personal_knowledge_base?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  security:
+    jwt:
+      secret: my_secret
+      expiration: 86400000
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+
+jwt:
+  my_secret: "P9KEROxdXy3YGjUo6LYg07Ta_b1_EIGksATLZSxdETHzJIb50bLlFqzhi_c5fqbiMVvrOxdCoo3dhhHjAIH6Aw"
+  expiration: 3600000
