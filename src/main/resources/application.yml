@@ -20,11 +20,11 @@ spring:
     jwt:
       secret: my_secret
       expiration: 86400000
-  data:
-    redis:
-      database: 0
-      host: localhost
-      port: 6379
+#  data:
+#    redis:
+#      database: 0
+#      host: localhost
+#      port: 6379
 
 mybatis-plus:
   configuration:
@@ -43,3 +43,9 @@ logging:
 jwt:
   my_secret: "P9KEROxdXy3YGjUo6LYg07Ta_b1_EIGksATLZSxdETHzJIb50bLlFqzhi_c5fqbiMVvrOxdCoo3dhhHjAIH6Aw"
   expiration: 3600000
+
+
+knife4j:
+  enable: true  # 启用 Knife4j
+  production: false  # 是否启用生产环境，通常在开发环境中启用
+
