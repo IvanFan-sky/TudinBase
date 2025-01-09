@@ -55,3 +55,16 @@ CREATE TABLE `photos` (
     INDEX `idx_user_id` (`user_id`),
     INDEX `idx_album` (`album`)
 ) COMMENT '图片表';
+
+
+INSERT INTO `users` (`username`, `password`, `email`, `phone`, `role`, `status`, `create_time`, `update_time`)
+VALUES
+    ('admin', 'password123', 'admin@example.com', '1234567890', 'ADMIN', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('user1', 'password123', 'user1@example.com', '1234567891', 'USER', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('user2', 'password123', 'user2@example.com', '1234567892', 'USER', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO `notes` (`user_id`, `title`, `content`, `category`, `create_time`, `update_time`)
+VALUES
+    (1, 'My First Note', 'This is the content of the first note.', 'General', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (2, 'Note for User1', 'Content for User1\'s note.', 'Work', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3, 'Note for User2', 'Content for User2\'s note.', 'Personal', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
